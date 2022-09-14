@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
+using Microsoft.AspNetCore.Authorization;
 namespace APIGateway.Controllers
 {
     [ApiController]
@@ -22,7 +22,7 @@ namespace APIGateway.Controllers
         {
             _logger = logger;
         }
-
+       // [Authorize]
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {

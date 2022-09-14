@@ -6,11 +6,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 
-namespace ServiceB.Controllers
+
+namespace ServiceAuthToken.Controllers
 {
-    [Authorize]
+    
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
@@ -25,10 +26,10 @@ namespace ServiceB.Controllers
             _logger = logger;
         }
 
+        [Authorize]
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
-            
             var rng = new Random();
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
@@ -40,4 +41,3 @@ namespace ServiceB.Controllers
         }
     }
 }
-//Service B

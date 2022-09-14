@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace APIGetway.Controllers
 {
-    //[Authorize]
+    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     public class WeatherForecastController : ControllerBase

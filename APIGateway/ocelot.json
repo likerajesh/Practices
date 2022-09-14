@@ -20,11 +20,23 @@
         "GET",
         "DELETE"
       ],
-     // "UpstreamScheme": "https",
+      // "UpstreamScheme": "https",
       "LoadBalancerOptions": {
         "Type": "RoundRobin"
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RateLimitOptions": {
+        "ClientWhitelist": [],
+        "EnableRateLimiting": true,
+        "Period": "5s",
+        "PeriodTimespan": 1,
+        "Limit": 1
       }
     }
+   
 
   ]
 

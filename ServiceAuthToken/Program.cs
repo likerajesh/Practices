@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace APIGateway
+namespace ServiceAuthToken
 {
     public class Program
     {
@@ -21,17 +21,6 @@ namespace APIGateway
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
-                    
-                }).ConfigureAppConfiguration((hostingContext, config) =>
-                {
-                    //var env = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
-                    //config.AddJsonFile($"ocelot.{env}.json");
-
-                    config.SetBasePath(hostingContext.HostingEnvironment.ContentRootPath)
-                    .AddJsonFile("ocelot.json", optional: false, reloadOnChange : true)
-                    .AddEnvironmentVariables();
-
-
                 });
     }
 }
